@@ -1,0 +1,21 @@
+
+plugins {
+	id 'org.springframework.boot' version '2.3.3.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+dependencies {
+	compileOnly group: "javax.ws.rs", name: "javax.ws.rs-api"
+	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations"
+	compileOnly group: "org.osgi", name: "org.osgi.service.jaxrs"
+	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.9'
+	compile group: 'javax.validation', name: 'validation-api', version: '2.0.0.Final'
+	
+	compileOnly project(":modules:services:services-api")
+	compileOnly project(":modules:services:services-service")
+}
+

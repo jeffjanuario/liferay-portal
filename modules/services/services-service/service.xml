@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.services" auto-namespace-tables="false" >
+	<namespace>Contatos</namespace>
+    <entity name="Estado" local-service="true" table="Estado" remote-service="true" uuid="true">
+        <column name="estadoId" type="long" primary="true"></column>
+        <column name="nome" primary="false" type="String"></column>
+        <column name="uf" type="String" primary="false"></column>
+    </entity>
+    <entity name="Cidade" local-service="true" table="Cidade" remote-service="true" uuid="true">
+        <column name="cidadeId" type="long" primary="true"></column>
+        <column name="nome" type="String"></column>
+        <column name="estadoId" type="long"></column>
+        <finder name="estadoId" return-type="Collection">
+            <finder-column name="estadoId"></finder-column>
+        </finder>
+        <reference entity="Estado" package-path="com.services"></reference>
+        
+    </entity>
+    <entity name="Contato" local-service="true" table="Contato" remote-service="true" uuid="true">
+        <column name="contatoId" type="long" primary="true"></column>
+        <column name="nome" type="String"></column>
+        <column name="email" type="String"></column>
+        <column name="telefone" type="String"></column>
+        <column name="Mensagem" type="String"></column>
+        <column name="cidadeId" type="long"></column>
+        <reference entity="Cidade" package-path="com.services"></reference>
+    </entity>
+</service-builder>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.services.model.Cidade">
+		<field name="cidadeId" type="long" />
+		<field name="nome" type="String" />
+		<field name="estadoId" type="long" />
+	</model>
+	<model name="com.services.model.Contato">
+		<field name="contatoId" type="long" />
+		<field name="nome" type="String" />
+		<field name="email" type="String" />
+		<field name="telefone" type="String" />
+		<field name="Mensagem" type="String" />
+		<field name="cidadeId" type="long" />
+	</model>
+	<model name="com.services.model.Estado">
+		<field name="estadoId" type="long" />
+		<field name="nome" type="String" />
+		<field name="uf" type="String" />
+	</model>
+</model-hints>

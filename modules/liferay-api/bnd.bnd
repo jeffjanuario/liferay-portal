@@ -1,0 +1,4 @@
+Bundle-Name: liferay-api
+Bundle-SymbolicName: com.api
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration

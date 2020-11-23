@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="com.services.model.Cidade" />
+	<import class="com.services.model.Contato" />
+	<import class="com.services.model.Estado" />
+	<class name="com.services.model.impl.CidadeImpl" table="Cidade">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="cidadeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="estadoId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.services.model.impl.ContatoImpl" table="Contato">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="contatoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="telefone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="Mensagem" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="cidadeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.services.model.impl.EstadoImpl" table="Estado">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="estadoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="uf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
